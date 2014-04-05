@@ -10,4 +10,16 @@
 
 * Altere, adicione as informações que você quer anúnciar no seu panfleto.
 
+```java
+void animaInfo() {
+  fill(color(24,179,210));
+  rect(height/4, 0, height, width - 250, width);
+  fill(255);
+  text("Evento: Oficina de Stencil", 20, 100);
+  text("Ministrante: João Lazaro", 20, 150);
+  text("Local: Tarrafa Headquarters", 20, 200);
+  text("Site: tarrafa.net", 20, 250);
+}
+```
+
 * Modifique o código para criar animações diferentes.
