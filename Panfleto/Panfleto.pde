@@ -85,9 +85,9 @@ void animaV() {
     vertical[foo].colore(205, 205, 205, 50, 0, 0, 'n');
   else if (random(1) < .6)
     vertical[foo].colore(252, 217, 0, 100, 0, 0, 'n');
-  else if (random(1) < .7)
+  else if (random(1) < .3)
     vertical[foo].colore(255, 255, 255, 0, 0, 0, 'n');
-  else if (random(1) < .8)
+  else if (random(1) < .3)
     vertical[foo].colore(22, 175, 210, 100, 0, 0, 'n');
   else if (random(1) < .9)
     vertical[foo].colore(parseInt(random(200, 250)), 0, 0, 100, 0, 0, 'n');
@@ -98,11 +98,11 @@ void animaH() {
 
   if (random(1) < .5)
     horizontal[bar].colore(205, 205, 205, 50, 0, 0, 'n');
-  else if (random(1) < .6)
+  else if (random(1) < .2)
     horizontal[bar].colore(22, 175, 210, 100, 0, 0, 'n');
-  else if (random(1) < .7)
+  else if (random(1) < .2)
     horizontal[bar].colore(255, 255, 255, 0, 0, 0, 'n');
-  else if (random(1) < .8)
+  else if (random(1) < .3)
     horizontal[bar].colore(252, 217, 0, 100, 0, 0, 'n');
   else if (random(1) < .9)
     horizontal[bar].colore(0, 0, parseInt(random(140, 255)), 100, 0, 0, 'n');
@@ -113,11 +113,19 @@ void animaTarrafaImage() {
 }
 
 void animaInfo() {
-  fill(color(24,179,210));
+  fill(#B486C6);
   rect(height/4, 0, height, width - 250, width);
   fill(255);
-  text("Evento: Oficina de Stencil", 20, 100);
-  text("Ministrante: João Lazaro", 20, 150);
-  text("Local: Tarrafa Headquarters", 20, 200);
-  text("Site: tarrafa.net", 20, 250);
+  text("Evento: Processing Parte II", 20, 60);
+  text("Ministrante: Lucas Tonussi", 20, 100);
+  text("Local: Tarrafa Hacker Clube", 20, 140);
+  text("Site: http://tarrafa.net/", 20, 180);
+  text("Site: http://processing.org/", 20, 220);
 }
+
+void screenshot() {
+  if (key == 's') {
+    saveFrame("pics/panfleto-######.png");
+  }
+}
+
