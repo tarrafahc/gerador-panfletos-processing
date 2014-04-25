@@ -123,7 +123,7 @@ void animaInfo() {
   text("Site: http://processing.org/", 20, 220);
 }
 
-void screenshot() {
+void keyPressed() {
   if (key == 's') {
     saveFrame("pics/panfleto-######.png");
   }
