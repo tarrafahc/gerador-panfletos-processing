@@ -26,7 +26,7 @@ void animaInfo() {
 
 # Screenshots
 
-Quando você quiser salvar imagens do seu panfleto. Basta clicar 's' no seu teclado. Por causa dessa função abaixo, você salvará fotos do seu desenho dentro do diretório gerador-panfletos-processing, e dentro do diretório pics.
+Quando você quiser salvar imagens do seu panfleto. Basta clicar 's' no seu teclado. Por causa dessa função abaixo, você salvará fotos do seu desenho dentro do diretório gerador-panfletos-processing: `Panfleto/data/pics/<<suas_imagens>>`
 
 ```java
 void keyPressed() {
