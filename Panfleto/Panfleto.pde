@@ -1,31 +1,22 @@
 /* @pjs preload="logo-180total.png"; */
 
+PFont tarrafa;
 Desenhador desenhista;
 PImage tarrafaImageLogo;
-PFont tarrafa;
-float px;
-float py;
-float offSetXH = 1;
-float offSetYV = 1;
-float offSetYH = -18.897637795;
-float offSetXV = -18.897637795;
-float gridH = 37.795275591;
-float gridV = 37.795275591;
-float t1, t2;
+float px, py, offSetXH = 1, offSetYV = 1, offSetYH = -18.897637795, offSetXV = -18.897637795, gridH = 37.795275591, gridV = 37.795275591, t1, t2;
 
 public void setup() {
-
   size(710, 710);
 
   rectMode(CENTER);
   imageMode(CENTER);
 
   tarrafaImageLogo = loadImage("logo-180total.png");
-  tarrafa = createFont("Ubuntu", 12, true);
-  textFont(tarrafa, 12);
+  tarrafa = createFont("Inconsolata", 32, true);
+  textFont(tarrafa, 32);
 
   desenhista = new Desenhista();
-  
+
   noStroke();
 }
 
@@ -38,13 +29,11 @@ public void draw() {
 }
 
 public void vertical() {
-
   px = py = gridV;
   t1 = width - 2*gridV;
 
   for (int i = 0; i < 306; i++) {
-    desenhista.desenhaVertical(px - offSetXV, py - offSetYV, 251, 217, 5, 100);
-
+    desenhista.desenhaVertical(px - offSetXV, py - offSetYV, 251, 217, 5, 50);
     if (px < t1) {
       px += gridV;
     } else if (py < height) {
@@ -55,13 +44,11 @@ public void vertical() {
 }
 
 public void horizontal() {
-
   px = py = gridH;
   t2 = width - gridV;
 
   for (int i = 0; i < 306; i++) {
-    desenhista.desenhaHorizontal(px - offSetXH, py - offSetYH, 18, 178, 209, 100);
-
+    desenhista.desenhaHorizontal(px - offSetXH, py - offSetYH, 17, 178, 209, 50);
     if (px < t2) {
       px += gridH;
     } else if (py < height) {
@@ -72,23 +59,17 @@ public void horizontal() {
 }
 
 public void logo() {
-
   image(tarrafaImageLogo, 415, 430);
 }
 
-public void info() {
-
-  fill(#2B2B2B);
+public void info() {  
+  fill(#2b2b2b);
   triangle(0, -50, 450, 0, 0, height);
-  fill(#ADE8C7);
-  text("Tarrafa Hackerspace", 20, 140);
-  text("tarrafa.net", 20, 180);
-  noFill();
-
+  fill(#ffffff);
+  text("Tarrafa Hackerspace", 30, 60);
 }
 
 public void keyPressed() {
-
   if (key == 's') {
     saveFrame("pics/panfleto-######.png");
   }
