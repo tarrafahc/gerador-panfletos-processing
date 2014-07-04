@@ -33,7 +33,19 @@ public void vertical() {
   t1 = width - 2*gridV;
 
   for (int i = 0; i < 306; i++) {
+
+    /*
+     * Cor amarelo do logo
+     */
+
     desenhista.desenhaVertical(px - offSetXV, py - offSetYV, 251, 217, 5, 50);
+
+    /*
+     * Gradiente
+     */
+
+    //desenhista.desenhaVertical(px - offSetXV, py - offSetYV, py%300, py%130, py%140, 50);
+
     if (px < t1) {
       px += gridV;
     } else if (py < height) {
@@ -48,7 +60,19 @@ public void horizontal() {
   t2 = width - gridV;
 
   for (int i = 0; i < 306; i++) {
-    desenhista.desenhaHorizontal(px - offSetXH, py - offSetYH, 17, 178, 209, 50);
+
+    /*
+     * Cor azul do logo
+     */
+
+    //desenhista.desenhaHorizontal(px - offSetXH, py - offSetYH, 17, 178, 209, 50);
+
+    /*
+     * Gradiente
+     */
+
+    desenhista.desenhaHorizontal(px - offSetXH, py - offSetYH, py%300, py%130, py%140, 50);
+
     if (px < t2) {
       px += gridH;
     } else if (py < height) {
