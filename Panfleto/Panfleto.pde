@@ -11,10 +11,11 @@ float offSetYH = -18.897637795;
 float offSetXV = -18.897637795;
 float gridH = 37.795275591;
 float gridV = 37.795275591;
+float t1, t2;
 
 public void setup() {
 
-  size(800, 540);
+  size(710, 710);
 
   rectMode(CENTER);
   imageMode(CENTER);
@@ -24,26 +25,27 @@ public void setup() {
   textFont(tarrafa, 12);
 
   desenhista = new Desenhista();
+  
+  noStroke();
 }
 
 public void draw() {
-
   background(255);
   vertical();
   horizontal();
   logo();
   info();
-
 }
 
 public void vertical() {
 
   px = py = gridV;
-  float temp = width - 2*gridV;
+  t1 = width - 2*gridV;
 
-  for (int i = 0; i < 260; i++) {
-    desenhista.desenhaVertical(px - offSetXV, py - offSetYV, px, px, py%35, 50);
-    if (px < temp) {
+  for (int i = 0; i < 306; i++) {
+    desenhista.desenhaVertical(px - offSetXV, py - offSetYV, 251, 217, 5, 100);
+
+    if (px < t1) {
       px += gridV;
     } else if (py < height) {
       px = gridV;
@@ -55,12 +57,12 @@ public void vertical() {
 public void horizontal() {
 
   px = py = gridH;
-  float temp = width - gridV;
+  t2 = width - gridV;
 
-  for (int i = 0; i < 252; i++) {
-    desenhista.desenhaHorizontal(px - offSetXH, py - offSetYH, py%32, px%87, py, 50);
+  for (int i = 0; i < 306; i++) {
+    desenhista.desenhaHorizontal(px - offSetXH, py - offSetYH, 18, 178, 209, 100);
 
-    if (px < temp) {
+    if (px < t2) {
       px += gridH;
     } else if (py < height) {
       px = gridH;
@@ -70,22 +72,24 @@ public void horizontal() {
 }
 
 public void logo() {
+
   image(tarrafaImageLogo, 415, 430);
 }
 
 public void info() {
+
   fill(#2B2B2B);
   triangle(0, -50, 450, 0, 0, height);
   fill(#ADE8C7);
-  text("Tarrafa Hacker Clube", 20, 140);
+  text("Tarrafa Hackerspace", 20, 140);
   text("tarrafa.net", 20, 180);
   noFill();
-  noStroke();
+
 }
 
 public void keyPressed() {
+
   if (key == 's') {
     saveFrame("pics/panfleto-######.png");
   }
 }
-
