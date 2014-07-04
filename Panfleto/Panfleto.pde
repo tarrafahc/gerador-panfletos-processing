@@ -12,9 +12,10 @@ float offSetXV = -18.897637795;
 float gridH = 37.795275591;
 float gridV = 37.795275591;
 
-void setup() {
+public void setup() {
 
-  size(900, 600);
+  size(800, 540);
+
   rectMode(CENTER);
   imageMode(CENTER);
 
@@ -23,35 +24,25 @@ void setup() {
   textFont(tarrafa, 12);
 
   desenhista = new Desenhista();
-  
 }
 
-void draw() {
+public void draw() {
+
   background(255);
   vertical();
   horizontal();
   logo();
   info();
+
 }
 
-void vertical() {
+public void vertical() {
 
   px = py = gridV;
   float temp = width - 2*gridV;
 
-  for (int i = 0; i < 569; i++) {
-
-    if (random(1) < .3)
-      desenhista.colore(205, 205, 205, 50);
-    else
-      desenhista.colore(252, 217, 0, 100);
-    if (random(1) < .3)
-      desenhista.colore(255, 255, 255, 0);
-    else
-      desenhista.colore(22, 175, 210, 100);
-
-    desenhista.desenhaVertical(px - offSetXV, py - offSetYV);
-
+  for (int i = 0; i < 260; i++) {
+    desenhista.desenhaVertical(px - offSetXV, py - offSetYV, px, px, py%35, 50);
     if (px < temp) {
       px += gridV;
     } else if (py < height) {
@@ -61,22 +52,13 @@ void vertical() {
   }
 }
 
-void horizontal() {
+public void horizontal() {
 
   px = py = gridH;
   float temp = width - gridV;
 
-  for (int i = 0; i < 648; i++) {
-    if (random(1) < .2)
-      desenhista.colore(205, 205, 205, 50);
-    else
-      desenhista.colore(22, 175, 210, 100);
-    if (random(1) < .2)
-      desenhista.colore(255, 255, 255, 0);
-    else
-      desenhista.colore(252, 217, 0, 100);
-
-    desenhista.desenhaHorizontal(px - offSetXH, py - offSetYH);
+  for (int i = 0; i < 252; i++) {
+    desenhista.desenhaHorizontal(px - offSetXH, py - offSetYH, py%32, px%87, py, 50);
 
     if (px < temp) {
       px += gridH;
@@ -87,11 +69,11 @@ void horizontal() {
   }
 }
 
-void logo() {
-  image(tarrafaImageLogo, 700, 400);
+public void logo() {
+  image(tarrafaImageLogo, 415, 430);
 }
 
-void info() {
+public void info() {
   fill(#2B2B2B);
   triangle(0, -50, 450, 0, 0, height);
   fill(#ADE8C7);
@@ -101,13 +83,9 @@ void info() {
   noStroke();
 }
 
-void keyPressed() {
+public void keyPressed() {
   if (key == 's') {
     saveFrame("pics/panfleto-######.png");
   }
 }
-
-//  void coloreOnMouseOver(int x, int y) {
-//    if (dist(this.x, this.y, x, y) < 10)
-//      colore(0, 0, parseInt(random(255)), 100, 0, 0, 'n');
 
